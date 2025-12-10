@@ -2,6 +2,8 @@
 
 This repository explores multiple deep learning pipelines (Pix2Pix, improved GAN variants) to **synthesize CT images from MRI scans**, with a focus on clinical-quality reconstruction and robust evaluation metrics.
 
+Built a Deep Learning based model to synthesize clinical quality CT images from Brain MRI data. Applied image normalization, cropping, augmentation, train-test preparation, and contrast adjustments during preprocessing. Tracked training metrics using SSIM and GAN loss; used PatchGAN discriminator(16×16).
+
 The work is organized as a collection of **Jupyter notebooks** that incrementally improve the model design, data preprocessing, and training strategy.
 
 ---
@@ -24,7 +26,8 @@ A GAN consists of two neural networks:
   Evaluates whether input samples are real or fake.
   
 <br>
-🔹 Generator (G):
+
+🔹 **Generator (G):**
 <br>The Generator is the model responsible for creating synthetic images.  
 It starts with random noise (or sometimes a latent vector) and learns how to produce outputs that resemble real data.
 
@@ -38,7 +41,8 @@ It starts with random noise (or sometimes a latent vector) and learns how to pro
 Generate images that look real enough to trick the discriminator.
 
 <br>
-🔸 Discriminator (D):
+
+🔸 **Discriminator (D):**
 <br>The Discriminator is a classifier that decides whether an input image is real or fake.
 
 **Key Points:**
@@ -51,7 +55,8 @@ Generate images that look real enough to trick the discriminator.
 Correctly distinguish real images from generator-produced fake ones.
 
 <br>
-⚔️ Adversarial Learning (Competition):<br>  
+
+⚔️ **Adversarial Learning (Competition):**  
 - G learns to produce better (more realistic) images <br>
 - D learns to become better at detection <br>
 - This adversarial process continues until the generator produces highly realistic outputs
@@ -61,12 +66,13 @@ Together, they form the **Generative Adversarial Network (GAN)** —  a powerful
 
 ---
 
-## System Architecture
+## System Architectures
 
+- Model Architecture
 <img width="607" height="259" alt="image" src="https://github.com/user-attachments/assets/63963502-95df-4204-9f96-adb2e97b5d0e" />
 
 
-- Pix2Pix
+- Pix2Pix Architecture
 <img width="464" height="308" alt="image" src="https://github.com/user-attachments/assets/39f04b14-de11-4d54-9368-4a57f232d396" />
 
 ---
@@ -160,9 +166,17 @@ Each model folder typically contains:
 
 ---
 
-## 📈 Best Models – Code Flow & Metrics
+## 📈 Models – Code Flow & Metrics
 
 Below is a summary of the **key notebook versions** and their performance metrics.
+
+### Best Model: MK6.4.3_CP3
+  - MSE: 0.008025
+  - SSIM: 0.917649 (~92%)  
+  - FID: 60.405193 
+  - VGG Loss: 0.864183 
+
+<br>
 
 ### MK3.1.x Series
 
@@ -178,7 +192,6 @@ Below is a summary of the **key notebook versions** and their performance metric
   - FID: 174.542770  
   - VGG Loss: 2.671596  
 
----
 
 ## ✅ Check Point 1 (26/05/2025)
 
@@ -206,7 +219,6 @@ Below is a summary of the **key notebook versions** and their performance metric
   - FID: 118.909042  
   - VGG Loss: 1.640784  
 
----
 
 ## ✅ Check Point 2 (01/06/2025)
 
@@ -222,7 +234,6 @@ Below is a summary of the **key notebook versions** and their performance metric
   - FID: 104.621910  
   - VGG Loss: 1.428501  
 
----
 
 ## ✅ Check Point 3 (05/06/2025)
 
