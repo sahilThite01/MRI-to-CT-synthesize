@@ -87,11 +87,8 @@ Key components in this repo: (`./models/`)
 - `MK6.*_CP*.ipynb`  
   Later **checkpointed** versions with improved preprocessing, augmentation, and loss weighting – these yield the best-performing models so far (see metrics below).
 
-- `Preprocess_&_mask.ipynb`, `Preprocess_&_mask_2.ipynb`, `Mask_creator.ipynb`  
+- `Preprocess_&_mask.ipynb`, `Mask_creator.ipynb`  
   Notebooks for preprocessing MRI/CT slices, generating masks, and preparing data for training.
-
-- `docs/`  
-  Space for extended documentation/notes (can be expanded as the project evolves).
 
 - `practice_brain_example/`  
   Example pipeline/notebooks on a brain MRI use case, useful as a small sandbox to understand the workflow.
